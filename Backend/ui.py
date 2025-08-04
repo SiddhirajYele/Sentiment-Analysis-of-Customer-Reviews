@@ -2,11 +2,14 @@ import streamlit as st
 import joblib
 import numpy as np
 import matplotlib.pyplot as plt
+from pathlib import Path
 import os
 # Load model and vectorizer
-current_dir = os.path.dirname(__file__)  # the Backend/ folder
-model = joblib.load(os.path.join(current_dir, "sentiment_model.pkl"))
-vectorizer = joblib.load(os.path.join(current_dir, "tfidf_vectorizer.pkl"))
+model_path = Path(__file__).parent / "sentiment_model.pkl"
+vectorizer_path = Path(__file__).parent / "tfidf_vectorizer.pkl"
+
+model = joblib.load(model_path)
+vectorizer = joblib.load(vectorizer_path)
 
 # Label mapping
 label_map = {0: "Negative", 1: "Neutral", 2: "Positive"}
