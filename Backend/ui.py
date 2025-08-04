@@ -4,8 +4,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Load model and vectorizer
-model = joblib.load("Backend/sentiment_model.pkl")
-vectorizer = joblib.load("Backend/tfidf_vectorizer.pkl")
+model = joblib.load("sentiment_model.pkl")
+vectorizer = joblib.load("tfidf_vectorizer.pkl")
 
 # Label mapping
 label_map = {0: "Negative", 1: "Neutral", 2: "Positive"}
